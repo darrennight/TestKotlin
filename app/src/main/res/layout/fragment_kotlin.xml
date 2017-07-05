@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="pageNumber"
+        android:gravity="center"
+        android:id="@+id/pagerNumber"
+        />
+    <Button
+        android:id="@+id/btn_fagmetn_permission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="permission"/>
+</RelativeLayout>

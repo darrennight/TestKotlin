@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_bus_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hahha"/>
+    <Button
+        android:id="@+id/btn_postbus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="postbus"/>
+
+    <Button
+        android:id="@+id/btn_go_test2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gotest2"/>
+</LinearLayout>
