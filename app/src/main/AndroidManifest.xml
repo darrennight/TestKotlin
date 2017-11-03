@@ -30,6 +30,11 @@
         <activity android:name=".permission.TestPermissionActivity2"/>
         <activity android:name=".rx.RXTestActivity"/>
         <activity android:name=".rx.RXTest2Activity"/>
+
+        <activity android:name=".BaseList.sample.HelloListActivity"/>
+        <activity android:name=".BaseList.sample.SampleListActivity"/>
+        <activity android:name=".BaseList.sample.SampleListFragmentActivity"/>
+        <activity android:name=".BaseList.sample.SampleRefreshListActivity"/>
     </application>
 
 </manifest>

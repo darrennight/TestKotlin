@@ -40,6 +40,12 @@
             android:layout_height="wrap_content"
             android:text="gorxbustest"/>
 
+        <Button
+            android:id="@+id/btn_hello_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="helloList"/>
+
     </LinearLayout>
 
 

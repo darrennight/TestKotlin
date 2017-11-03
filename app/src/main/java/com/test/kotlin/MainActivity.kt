@@ -7,9 +7,12 @@ import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.widget.Toast
+import com.test.kotlin.BaseList.sample.HelloListActivity
 import com.test.kotlin.MVP.TestMvpActivity
 import com.test.kotlin.bean.FanFouBean
+import com.test.kotlin.bean.Goods
 import com.test.kotlin.bean.Person
+import com.test.kotlin.bean.Tester
 import com.test.kotlin.net.ApiService
 import com.test.kotlin.net.IndexData
 import com.test.kotlin.net.JsonResult
@@ -84,6 +87,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity,RXTestActivity::class.java))
         }
 
+        btn_hello_list.setOnClickListener {
+            startActivity(Intent(this@MainActivity,HelloListActivity::class.java))
+        }
+
 
         /*var save:Int by Preference(this@MainActivity,"test",0)
         if(save == 0){
@@ -111,7 +118,100 @@ class MainActivity : AppCompatActivity() {
         test.delete("test")
 //        test.delete("test")
 
+        testLet()
+        testApply()
+        testWith()
+        testRun()
     }
+
+    /**
+     * let使用
+     * 返回最后一行
+     */
+    fun testLet(){
+        var tem:String? = null
+        tem.let {
+            Log.e("===","不管tem是否为null都可以输出")
+        }
+
+        tem?.let {
+            Log.e("===","tem为null不输出")
+        }
+
+        tem = "have"
+
+       var result =  tem?.let {
+            //it代表调用let的元素对象
+            Log.e("===","tem不为null输出$it")
+           "resultOutput"
+        }
+
+        Log.e("===","返回值$result")
+
+
+        var result2 =  tem?.let {
+            "resultOutput"
+            //it代表调用let的元素对象
+            Log.e("===","tem不为null输出$it")
+        }
+        Log.e("===","22222222返回值$result2")
+    }
+
+    /**
+     *apply使用
+     * apply返回自己 简化builder封装使用
+     */
+    fun testApply(){
+        val result ="Hello World".apply {
+            Log.e("====",this)
+            //  println(it)  // 编译器报错，lambda表达式没有参数it不能用
+            520
+        }
+
+        Log.e("===","apply" +
+                "$result")
+    }
+
+    /**
+     * with使用
+     *
+     */
+    fun testWith(){
+
+        val result = with("Hello World") {
+            Log.e("====","with$this")
+                //  println(it)  // 编译器报错，lambda表达式没有参数it不能用
+            520
+        }
+
+        Log.e("====","结果返回with$result")
+
+        var tester = Tester("zhang",12)
+
+        var tem = with(tester){
+            testSetName("lilili")
+            testSetAge(16)
+            this
+        }
+
+        Log.e("====","testWith$tem"+tem.name)
+
+    }
+
+    /**
+     * run使用
+     */
+    fun testRun(){
+        val result = "Hello World Run".run {
+            Log.e("====",this)
+            //  println(it)  // 编译器报错，lambda表达式没有参数it不能用
+            5200000
+        }
+
+        Log.e("=====",result.toString())
+    }
+
+    //let，apply，with，run ,also，takeIf， takeUnless
 
 
 

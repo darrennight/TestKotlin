@@ -6,4 +6,14 @@
         <attr name="civ_border_overlay" format="boolean" />
         <attr name="civ_fill_color" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="MonthTHumView">
+        <attr name="selectedCircleColor" format="color" />
+        <attr name="dayTextColor" format="color" />
+        <attr name="unavailableDayTextColor" format="color" />
+        <attr name="selectedDayTextColor" format="color" />
+        <attr name="monthTextColor" format="color" />
+        <attr name="dayTextSize" format="dimension" />
+        <attr name="monthTextSize" format="dimension" />
+    </declare-styleable>
 </resources>

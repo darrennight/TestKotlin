@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <com.liaoinstan.springview.widget.SpringView
+        android:id="@+id/base_sv_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <com.test.kotlin.BaseList.widget.StateLayout
+        android:id="@+id/layout_state"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_base_list_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.test.kotlin.BaseList.widget.StateLayout>
+
+    </com.liaoinstan.springview.widget.SpringView>
+</LinearLayout>

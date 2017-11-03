@@ -15,6 +15,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import org.jetbrains.annotations.NotNull
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * 拓展
@@ -111,6 +113,56 @@ fun Fragment.hideErrorImg(@NotNull viewGroup: ViewGroup) {
  */
 fun Activity.hideErrorImg(@NotNull viewGroup: ViewGroup) {
     viewGroup.visibility = View.GONE
+}
+
+
+/***
+ * 获取当月第一天
+ */
+fun Any.getMonthFirst():String{
+
+    val c = Calendar.getInstance()
+    c.add(Calendar.MONTH, 0)
+    c.set(Calendar.DAY_OF_MONTH, 1)
+    val format = SimpleDateFormat("yyyy-MM-dd")
+    return format.format(c.time)
+
+}
+
+/***
+ * 获取当月最后一天
+ */
+fun Any.getMonthLast():String{
+    val c = Calendar.getInstance()
+    c.set(Calendar.DAY_OF_MONTH, c.getActualMaximum(Calendar.DAY_OF_MONTH))
+    val format = SimpleDateFormat("yyyy-MM-dd")
+    return format.format(c.time)
+}
+
+
+fun Any.getToDay(): Calendar {
+    val toDay = Calendar.getInstance()
+    val year = toDay.get(Calendar.YEAR)
+    val month = toDay.get(Calendar.MONTH)
+    val day = toDay.get(Calendar.DAY_OF_MONTH)
+    toDay.clear()
+    toDay.set(Calendar.YEAR, year)
+    toDay.set(Calendar.MONTH, month)
+    toDay.set(Calendar.DAY_OF_MONTH, day)
+    return toDay
+}
+
+fun Any.getCalendar(year:Int,month:Int,day:Int): Calendar {
+    val calendar = Calendar.getInstance()
+    calendar.clear()
+    calendar.set(Calendar.YEAR, year)
+    calendar.set(Calendar.MONTH, month)
+    calendar.set(Calendar.DAY_OF_MONTH, day)
+    return calendar
+}
+
+fun Any.getMaxMonthCount(monthDay: Calendar):Int{
+    return monthDay.getActualMaximum(Calendar.DAY_OF_MONTH)
 }
 
 
